@@ -1,0 +1,98 @@
+title = "Base parameters for use with USDA's Cropland Data Layer (CDL) gridded landuse datasets."
+
+# ASSUMPTIONS:
+# Only the curve number for hydrologic soil group 'A' is specified here. All other values are generated from the
+# curve number aligners.
+#
+# Please don't even think about changing the values in this file without also changing the source (reference) of the parameter values.
+# The idea behind this file is to have a clear path back to a source for each type of parameter value that makes it into a
+# swb lookup table.
+#
+
+[references]
+allen_and_others_1998 = 'Allen, R.G., Pereira, L.S., Raes, D., and Smith, M., 1998, Crop evapotranspiration-Guidelines for computing crop water requirements-FAO Irrigation and drainage paper 56: Food and Agriculture Organization of the United Nations, Rome, 333 p.'
+cronshey_and_others_1986 = 'Cronshey, R., McCuen, R., Miller, N., Rawls, W., Robbins, S., and Woodward, D., 1986, Urban Hydrology for Small Watersheds - Technical release 55: US Dept. of Agriculture, Soil Conservation Service, Engineering Division, accessed at http://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/16/stelprdb1044171.pdf.'
+dwyer_and_others_1988 = 'DWYER, L.M., STEWART, D.W., and BALCHIN, D., 1988, Rooting characteristics of corn, soybeans and barley as a function of available water and soil physical characteristics: Canadian Journal of Soil Science, v. 68, no. 1, p. 121-132.'
+hay_2019 = 'Hay, C., 2019, Best Management Practices, Chapter 49: Soybean Irrigation: South Dakota State University Extension, 12 p., accessed May 30, 2024, at https://extension.sdstate.edu/sites/default/files/2020-03/S-0004-49-Soybean.pdf.'
+hawkins_and_others_2009 = 'Hawkins, R.H., Ward, T.J., Woodward, D.E., and Van Mullem, J.A., 2009, Curve number hydrology: American Society of Civil Engineers, 106 p.'
+irmak_and_rudnick_2007 = 'Irmak, S., and Rudnick, D.R., 2007, Corn Irrigation Management Under Water-Limiting Conditions: University of Nebraska Extension, 8 p., accessed May 30, 2024, at https://extensionpubs.unl.edu/publication/ec2007/pdf/view/ec2007-2014.pdf.'
+mathesius_and_others_2021 = 'Mathesius, K., Lundy, M.E., Clark, N., and Dias, J.L.C. de S., 2021, Irrigation for wheat and other small grains in a drought year, accessed May 30, 2024, at ANR Blogs at https://ucanr.edu/blogs/blogcore/postdetail.cfm?postnum=47628.'
+umn_extension_corn_planting_2024 = 'University of Minnesota Extension, 2024, Planting date considerations for corn accessed May 30, 2024, at https://extension.umn.edu/corn-planting/planting-date-considerations-corn.'
+umn_extension_small_grains_planting_2024 = 'University of Minnesota Extension, 2024, Planting date for small grains, accessed May 30, 2024, at https://extension.umn.edu/planting-small-grains/planting-date.'
+umn_extension_soybean_planting_2024 = 'University of Minnesota Extension, 2024, Soybean planting, accessed May 30, 2024, at https://extension.umn.edu/soybean/soybean-planting.'
+
+[evaporable_water]
+# values correspond to "A", "B", "C", and "D" hydrologic soil groups
+# (A: "loamy sand", B: "loam", C: "silt clay loam", D: "clay")
+# tew: 8mm, 12mm, 16mm, 20mm
+total_tew = [0.315, 0.472, 0.63, 0.787]
+# rew: 4mm, 6mm, 8mm, 10mm 
+readily_rew = [0.157, 0.236, 0.314, 0.394]
+tew_rew_reference = 'Table 19, Allen and others, 1998'
+
+[crop.corn]
+lu_code = [1, 12, 13]
+description = ['corn', 'sweet_corn', 'pop_or_orn_corn']
+curve_number = 65
+curve_number_reference = 'Table 2.2b, contoured row crop, good condition, Cronshey and others, 1986'
+# in corn the bulk of roots were generally distributed in the top 0.45 m
+rooting_depth = 1.48
+rooting_depth_reference = 'Table 5, Dwyer and others, 1988'
+planting_date = '05/05'
+planting_date_reference = 'umn_extension_corn_planting_2024'
+kcb = {ini = 0.15, mid = 1.15, end = 0.5, min = 0.15}
+kcb_reference = 'Table 17i, Allen and others, 1998'
+gdd = {base = 50, max = 130}
+l = {ini=20, dev=35, mid=40, late=30, fallow=10}
+l_reference = 'Table 11h, Maize (grain), Idaho, Allen and others, 1998'
+depletion_fraction = 0.55
+depletion_fraction_reference = 'Table 22i, Maize, field, Allen and others, 1998'
+# application_amount is not used unless application_scheme is 'constant_amount'
+irrigation = {application_scheme = 'field_capacity', application_amount = 0.0, allowable_depletion_fraction_mad = 0.4}
+irrigation_dates = {start = '05/05', end = 'calc'}
+irrigation_reference = ['Irmak and Rudnick, 2007']
+
+
+[crop.soybean]
+lu_code = [5]
+description = ['soybean']
+curve_number = 55
+curve_number_reference = 'Table 2.2b, contoured legumes, good condition, Cronshey and others, 1986'
+# in soybean the bulk of roots were generally distributed in the top 0.3 m
+rooting_depth = 0.98
+rooting_depth_reference = 'Table 5, Dwyer and others, 1988'
+planting_date = '05/05'
+planting_date_reference = 'umn_extension_soybean_planting_2024'
+kcb = {ini = 0.15, mid = 1.1, end = 0.3, min = 0.15}
+kcb_reference = 'Table 17e, Allen and others, 1998'
+gdd = {base = 50, max = 130}
+l = {ini=20, dev=30, mid=60, late=25, fallow=10}
+l_reference = 'Table 11e, Central USA, Allen and others, 1998'
+depletion_fraction = 0.5
+depletion_fraction_reference = 'Table 22e, Allen and others, 1998'
+irrigation = {application_scheme = 'field_capacity', application_amount = 0.0, allowable_depletion_fraction_mad = 0.5}
+irrigation_dates = {start = '05/05', end = 'calc'}
+irrigation_reference = ['Hay, 2019']
+
+
+[crop.small_grains]
+lu_code = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+description = ['barley', 'durham_wheat', 'spring_wheat', 'winter_wheat', 'other_small_grains',
+               'dbl_crp_wint_wheat_soybeans', 'rye', 'oats', 'millet', 'spelt',
+               'canola', 'flaxseed', 'safflower', 'rape_seed', 'mustard']
+curve_number = 63
+curve_number_reference = 'Table 2.2b, small grain, straight row, good condition, Cronshey and others, 1986'
+rooting_depth = 0.98
+rooting_depth_reference = 'Table 5, Dwyer and others, 1988'
+planting_date = '04/20'
+planting_date_reference = 'umn_extension_small_grains_planting_2024'
+kcb = {ini = 0.15, mid = 1.1, end = 0.15, min = 0.15}
+kcb_reference = 'Table 17i, Allen and others, 1998'
+gdd = {base = 50, max = 130}
+l = {ini=20, dev=25, mid=60, late=30, fallow=10}
+l_reference = 'Table 11i, wheat, 35-45 degrees N, Allen and others, 1998'
+depletion_fraction = 0.55
+depletion_fraction_reference = 'Table 22i, Allen and others, 1998'
+irrigation = {application_scheme = 'field_capacity', application_amount = 0.0, allowable_depletion_fraction_mad = 0.45}
+irrigation_dates = {start = '04/20', end = 'calc'}
+irrigation_reference = ['Mathesius and others, 2021']
