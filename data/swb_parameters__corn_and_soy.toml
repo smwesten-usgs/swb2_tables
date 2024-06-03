@@ -33,6 +33,7 @@ description = ['corn', 'sweet_corn', 'pop_or_orn_corn']
 curve_number = 65
 curve_number_condition = 'drained'
 curve_number_reference = 'Table 2.2b, contoured row crop, good condition, Cronshey and others, 1986'
+max_net_infiltration = 4.0
 # Horton = 0.023in; Wang and others = 0.138in; avg = 0.08
 growing_season_interception = 0.08
 nongrowing_season_interception = 0.0
@@ -61,6 +62,7 @@ description = ['soybean']
 curve_number = 55
 curve_number_condition = 'drained'
 curve_number_reference = 'Table 2.2b, contoured legumes, good condition, Cronshey and others, 1986'
+max_net_infiltration = 4.0
 growing_season_interception = 0.039
 nongrowing_season_interception = 0.0
 interception_reference = 'Wang and Guo, 2024'

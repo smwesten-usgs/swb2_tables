@@ -2,6 +2,8 @@ import argparse
 import tomli
 from pathlib import Path
 from curve_number_aligner import curve_number_aligner
+from net_infiltration_aligner import net_infiltration_aligner
+from root_zone_aligner import root_zone_aligner
 import numpy as np
 from collections import defaultdict
 from combine_dicts import combine_dicts, combine_lists
@@ -45,8 +47,10 @@ df = pd.DataFrame({'lu_code': lu_codes, 'lu_description': lu_descriptions,
 
 for lu in lu_categories:
     cn = toml_dict['lu'][lu]['curve_number']
+    max_net_infil = toml_dict['lu'][lu]['max_net_infiltration']
     cn_condition = toml_dict['lu'][lu]['curve_number_condition']
     cn_dict = curve_number_aligner(cn, condition=cn_condition)
+    ni_dict = net_infiltration_aligner(max_net_infil)
     df.loc[df.lu_category==lu, 'cn_1'] = cn_dict['cn_a']
     df.loc[df.lu_category==lu, 'cn_2'] = cn_dict['cn_b']
     df.loc[df.lu_category==lu, 'cn_3'] = cn_dict['cn_c']
@@ -54,5 +58,19 @@ for lu in lu_categories:
     df.loc[df.lu_category==lu, 'cn_5'] = cn_dict['cn_ad']
     df.loc[df.lu_category==lu, 'cn_6'] = cn_dict['cn_bd']
     df.loc[df.lu_category==lu, 'cn_7'] = cn_dict['cn_cd']
+
+    df.loc[df.lu_category==lu, 'max_net_infil_1'] = ni_dict['max_net_infil_a']
+    df.loc[df.lu_category==lu, 'max_net_infil_2'] = ni_dict['max_net_infil_b']
+    df.loc[df.lu_category==lu, 'max_net_infil_3'] = ni_dict['max_net_infil_c']
+    df.loc[df.lu_category==lu, 'max_net_infil_4'] = ni_dict['max_net_infil_d']
+    df.loc[df.lu_category==lu, 'max_net_infil_5'] = ni_dict['max_net_infil_ad']
+    df.loc[df.lu_category==lu, 'max_net_infil_6'] = ni_dict['max_net_infil_bd']
+    df.loc[df.lu_category==lu, 'max_net_infil_7'] = ni_dict['max_net_infil_cd']
+
     df.loc[df.lu_category==lu, 'growing_season_interception'] = toml_dict['lu'][lu]['growing_season_interception']
     df.loc[df.lu_category==lu, 'nongrowing_season_interception'] = toml_dict['lu'][lu]['nongrowing_season_interception']
+
+    df.loc[df.lu_category==lu, 'kcb_ini'] = toml_dict['lu'][lu]['kcb']['ini']
+    df.loc[df.lu_category==lu, 'kcb_mid'] = toml_dict['lu'][lu]['kcb']['mid']
+    df.loc[df.lu_category==lu, 'kcb_end'] = toml_dict['lu'][lu]['kcb']['end']
+    df.loc[df.lu_category==lu, 'kcb_min'] = toml_dict['lu'][lu]['kcb']['min']

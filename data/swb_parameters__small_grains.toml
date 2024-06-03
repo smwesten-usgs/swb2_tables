@@ -6,6 +6,7 @@ description = ['barley', 'durham_wheat', 'spring_wheat', 'winter_wheat', 'other_
 curve_number = 63
 curve_number_condition = 'drained'
 curve_number_reference = 'Table 2.2b, small grain, straight row, good condition, Cronshey and others, 1986'
+max_net_infiltration = 4.0
 growing_season_interception = 0.05
 nongrowing_season_interception = 0.0
 interception_reference = 'Burgy and Pomeroy, 1958'
