@@ -11,22 +11,6 @@ title = "Base parameters for use with USDA's Cropland Data Layer (CDL) gridded l
 # swb lookup table.
 #
 
-[references]
-allen_and_others_1998 = 'Allen, R.G., Pereira, L.S., Raes, D., and Smith, M., 1998, Crop evapotranspiration-Guidelines for computing crop water requirements-FAO Irrigation and drainage paper 56: Food and Agriculture Organization of the United Nations, Rome, 333 p.'
-burgy_and_pomeroy_1958 = 'Burgy, R.H., and Pomeroy, C.R., 1958, Interception losses in grassy vegetation: Eos, Transactions American Geophysical Union, v. 39, no. 6, p. 1095–1100.'
-cronshey_and_others_1986 = 'Cronshey, R., McCuen, R., Miller, N., Rawls, W., Robbins, S., and Woodward, D., 1986, Urban Hydrology for Small Watersheds - Technical release 55: US Dept. of Agriculture, Soil Conservation Service, Engineering Division, accessed at http://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/16/stelprdb1044171.pdf.'
-dwyer_and_others_1988 = 'DWYER, L.M., STEWART, D.W., and BALCHIN, D., 1988, Rooting characteristics of corn, soybeans and barley as a function of available water and soil physical characteristics: Canadian Journal of Soil Science, v. 68, no. 1, p. 121-132.'
-hay_2019 = 'Hay, C., 2019, Best Management Practices, Chapter 49: Soybean Irrigation: South Dakota State University Extension, 12 p., accessed May 30, 2024, at https://extension.sdstate.edu/sites/default/files/2020-03/S-0004-49-Soybean.pdf.'
-hawkins_and_others_2009 = 'Hawkins, R.H., Ward, T.J., Woodward, D.E., and Van Mullem, J.A., 2009, Curve number hydrology: American Society of Civil Engineers, 106 p.'
-horton_1919 = 'Horton, R.E., 1919, Rainfall Interception: Monthly Weather Review, v. 47, no. 9, p. 608-623.'
-irmak_and_rudnick_2007 = 'Irmak, S., and Rudnick, D.R., 2007, Corn Irrigation Management Under Water-Limiting Conditions: University of Nebraska Extension, 8 p., accessed May 30, 2024, at https://extensionpubs.unl.edu/publication/ec2007/pdf/view/ec2007-2014.pdf.'
-mathesius_and_others_2021 = 'Mathesius, K., Lundy, M.E., Clark, N., and Dias, J.L.C. de S., 2021, Irrigation for wheat and other small grains in a drought year, accessed May 30, 2024, at ANR Blogs at https://ucanr.edu/blogs/blogcore/postdetail.cfm?postnum=47628.'
-umn_extension_corn_planting_2024 = 'University of Minnesota Extension, 2024, Planting date considerations for corn accessed May 30, 2024, at https://extension.umn.edu/corn-planting/planting-date-considerations-corn.'
-umn_extension_small_grains_planting_2024 = 'University of Minnesota Extension, 2024, Planting date for small grains, accessed May 30, 2024, at https://extension.umn.edu/planting-small-grains/planting-date.'
-umn_extension_soybean_planting_2024 = 'University of Minnesota Extension, 2024, Soybean planting, accessed May 30, 2024, at https://extension.umn.edu/soybean/soybean-planting.'
-wang_and_others_2024 = 'Wang, J., Liu, Y., Li, B., Li, Z., Zhang, Y., Zhang, S., Pan, Y., and Zhang, F., 2024, The Throughfall, Stemflow, and Canopy Interception Loss in Corn and Soybean Fields in Northeast China: Water, v. 16, no. 2, p. 253.'
-wang_and_guo_2024 = 'Wang, Q., and Guo, J., 2024, Rainfall interception loss as a function of leaf area index and rainfall by soybean: Theoretical and Applied Climatology, v. 155, no. 1, p. 289-297.'
-
 [lu.corn]
 lu_code = [1, 12, 13]
 description = ['corn', 'sweet_corn', 'pop_or_orn_corn']
