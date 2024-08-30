@@ -74,3 +74,5 @@ for lu in lu_categories:
     df.loc[df.lu_category==lu, 'kcb_mid'] = toml_dict['lu'][lu]['kcb']['mid']
     df.loc[df.lu_category==lu, 'kcb_end'] = toml_dict['lu'][lu]['kcb']['end']
     df.loc[df.lu_category==lu, 'kcb_min'] = toml_dict['lu'][lu]['kcb']['min']
+
+    df.loc[df.lu_category==lu, 'depletion_fraction'] = toml_dict['lu'][lu]['depletion_fraction']

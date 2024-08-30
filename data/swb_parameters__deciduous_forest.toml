@@ -1,0 +1,24 @@
+[lu.small_grains]
+lu_code = [141]
+description = ['deciduous_forest']
+curve_number = 45
+curve_number_condition = 'drained'
+curve_number_reference = 'Table 2.2c, woods, poor, Cronshey and others, 1986'
+max_net_infiltration = 4.0
+growing_season_interception = 0.05
+nongrowing_season_interception = 0.0
+interception_reference = 'Burgy and Pomeroy, 1958'
+rooting_depth = 
+rooting_depth_reference = 
+planting_date = 
+planting_date_reference = 
+kcb = {ini = 0.15, mid = 1.1, end = 0.15, min = 0.15}
+kcb_reference = 
+gdd = {base = 50, max = 130}
+l = {ini=20, dev=25, mid=60, late=30, fallow=10}
+l_reference = 
+depletion_fraction = 0.55
+depletion_fraction_reference = 'Table 22i, Allen and others, 1998'
+irrigation = {application_scheme = 'none', application_amount = 0.0, allowable_depletion_fraction_mad = 0.45}
+irrigation_dates = {start = '04/20', end = 'calc'}
+irrigation_reference = ['NA']

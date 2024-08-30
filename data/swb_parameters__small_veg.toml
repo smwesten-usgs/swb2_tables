@@ -1,0 +1,28 @@
+[lu.small_veg]
+lu_code = [42, 44, 47, 49, 50, 51, 52, 53, 54, 55, 56, 57, 207, 208, 214, 216, 219,
+           243, 244, 245, 248, 249]
+description = ['dry_beans', 'other_crops', 'misc_vegs_and_fruits', 'onions', 'cucumbers',
+               'chick_peas', 'lentils', 'peas', 'tomatoes', 'caneberries', 'hops', 'herbs',
+               'asparagus', 'garlic', 'broccoli', 'peppers', 'greens', 'cabbage', 
+               'cauliflower', 'celery', 'eggplants', 'gourds']
+curve_number = 67
+curve_number_condition = 'drained'
+curve_number_reference = 'Table 2.2b, row crops, straight row, good condition, Cronshey and others, 1986'
+max_net_infiltration = 4.0
+growing_season_interception = 0.07
+nongrowing_season_interception = 0.0
+interception_reference = 'Horton, 1919'
+rooting_depth = 1.6
+rooting_depth_reference = 'Table 22e, Allen and others, 1998'
+planting_date = '04/20'
+planting_date_reference = 'umn_extension_vegetable_planting_2024'
+kcb = {ini = 0.15, mid = 1.1, end = 0.5, min = 0.15}
+kcb_reference = 'Table 17e, Allen and others, 1998'
+gdd = {base = 50, max = 130}
+l = {ini=20, dev=30, mid=60, late=25, fallow=10}
+l_reference = 'Table 11e, soybeans, central USA, Allen and others, 1998'
+depletion_fraction = 0.55
+depletion_fraction_reference = 'Table 22i, Allen and others, 1998'
+irrigation = {application_scheme = 'field_capacity', application_amount = 0.0, allowable_depletion_fraction_mad = 0.45}
+irrigation_dates = {start = '04/20', end = 'calc'}
+irrigation_reference = ['None']
