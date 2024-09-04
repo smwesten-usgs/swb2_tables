@@ -1,5 +1,6 @@
 [references]
 allen_and_others_1998 = 'Allen, R.G., Pereira, L.S., Raes, D., and Smith, M., 1998, Crop evapotranspiration-Guidelines for computing crop water requirements-FAO Irrigation and drainage paper 56: Food and Agriculture Organization of the United Nations, Rome, 333 p.'
+allen_and_pereira_2009 = 'Allen, R.G., and Pereira, L.S., 2009, Estimating crop coefficients from fraction of ground cover and height: Irrigation Science, v. 28, no. 1, p. 17–34.'
 burgy_and_pomeroy_1958 = 'Burgy, R.H., and Pomeroy, C.R., 1958, Interception losses in grassy vegetation: Eos, Transactions American Geophysical Union, v. 39, no. 6, p. 1095–1100.'
 cronshey_and_others_1986 = 'Cronshey, R., McCuen, R., Miller, N., Rawls, W., Robbins, S., and Woodward, D., 1986, Urban Hydrology for Small Watersheds - Technical release 55: US Dept. of Agriculture, Soil Conservation Service, Engineering Division, accessed at http://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/16/stelprdb1044171.pdf.'
 dwyer_and_others_1988 = 'DWYER, L.M., STEWART, D.W., and BALCHIN, D., 1988, Rooting characteristics of corn, soybeans and barley as a function of available water and soil physical characteristics: Canadian Journal of Soil Science, v. 68, no. 1, p. 121-132.'
@@ -15,3 +16,4 @@ umn_extension_soybean_planting_2024 = 'University of Minnesota Extension, 2024, 
 umn_extension_vegetable_planting_2024 = 'University of Minnesota Extension, 2024, Vegetable planting, accessed August 30, 2024, at https://extension.umn.edu/planting-and-growing-guides/planting-vegetable-garden#when-to-plant-outside-1975163.'
 wang_and_others_2024 = 'Wang, J., Liu, Y., Li, B., Li, Z., Zhang, Y., Zhang, S., Pan, Y., and Zhang, F., 2024, The Throughfall, Stemflow, and Canopy Interception Loss in Corn and Soybean Fields in Northeast China: Water, v. 16, no. 2, p. 253.'
 wang_and_guo_2024 = 'Wang, Q., and Guo, J., 2024, Rainfall interception loss as a function of leaf area index and rainfall by soybean: Theoretical and Applied Climatology, v. 155, no. 1, p. 289-297.'
+younger_and_others_2020 = 'Younger, S.E., Jackson, C.R., and Rasmussen, T.C., 2020, Relationships among forest type, watershed characteristics, and watershed ET in rural basins of the Southeastern US: Journal of Hydrology, v. 591, p. 125316.'
